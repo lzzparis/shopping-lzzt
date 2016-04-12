@@ -8,6 +8,13 @@
 	font-family:"Amatic SC",sans-serif;
 	font-weight: 700;
 }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 li {
 	list-style: none;
 }
@@ -74,31 +81,29 @@ li {
 	border-radius: 8px;
 }
 
-.need-item, .bag-item {
+.sl-item {
 	font-size:3em;
 	margin:0.15em;
 	padding:0.15em 0.3em;	
-	border:2px solid white;
+	border:2px dotted white;
+	border-radius: 8px;
 
 }
 
-.bag-item {
+.in-my-bag__list > .sl-item {
 	color:#888;
 	text-decoration: line-through;
-	border:2px solid white;
-}
-.need-item:hover, .bag-item:hover {
-	border: 2px dotted #444;
-	border-radius: 8px;
 }
 
-.need-item:before {
+.sl-item:before {
 	content:"\2713";
 	float:left;
+	display: none;
 }
-.need-item:after {
+.sl-item:after {
 	content:"\2717";
 	float:right;
+	display: none;
 }
 
 @media only screen and (max-width: 1200px){
