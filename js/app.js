@@ -16,5 +16,13 @@ $(document).ready(function(){
 		$(this).css("border-color","white");
 		// $("this:before").css("display","none");		
 	});
+
+	$(".sl-item").on("click",function(){
+		itemData = $(this).html();
+		console.log (itemData);
+		$(".in-my-bag__list").append("<li class=\"sl-item\">"+itemData+"</li>");
+		$(this).remove();
+
+	});
  
 });
