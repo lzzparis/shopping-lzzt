@@ -3,10 +3,16 @@ $(document).ready(function(){
 	$(".add-item").on("click",".add-item__btn",function(event){
 		event.preventDefault();
 		var itemToAdd = $(this).parent().children(".add-item__input").val();
-		$(".stuff-i-need__list").prepend(
-			"<li class=\"sl-item\"><span class=\"side check\">&#x2713;</span><span class=\"middle\">"
-			+itemToAdd+"</span><span class=\"side ex\">&#x2717;</span></li>");
-		$(this).parent().children(".add-item__input").val("");
+		if (itemToAdd != ""){
+			console.log(itemToAdd);
+			$(".stuff-i-need__list").prepend(
+				"<li class=\"sl-item\"><span class=\"side check\">&#x2713;</span><span class=\"middle\">"
+				+itemToAdd+"</span><span class=\"side ex\">&#x2717;</span></li>");
+			$(this).parent().children(".add-item__input").val("");
+		}
+		else {
+			alert("Please type in the box to add items");
+		}
 	});
 
 	$(".stuff-i-need__list").on("click",".sl-item > .check",function(){
