@@ -4,7 +4,19 @@
   "description": "jquery shopping list",
   "main": "js/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+		"mkdir":"mkdir build build/css",
+		"build":"npm run clean && npm run mkdir && npm run build:html && npm run build:css && npm run build:js",
+		"watch":"npm run watch:html && npm run watch:css && npm run watch:js",
+		"clean":"rm -rf build",
+		"build:html":"npm run clean:html && cp index.html build/",
+		"watch:html":"npm run build:html && chokidar index.html -c 'npm run build:html'",
+		"clean:html":"rm -f build/*.html",
+		"build:css":"npm run clean:css && cp css/*.css build/css",
+		"watch:css":"npm run build:css && chokidar 'css/*.css' -c 'npm run build:css'",
+		"clean:css":"rm -f build/css/*.css",
+		"build:js":"npm run clean:js && webpack",
+		"watch:js":"npm run build:js && webpack --watch",
+		"clean:js":"rm -f build/*.js build/*.js.map"
   },
   "repository": {
     "type": "git",
@@ -18,5 +30,9 @@
   "homepage": "https://github.com/lzzparis/shopping-lzzt#readme",
   "dependencies": {
     "jquery": "^3.0.0"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "webpack": "^1.13.1"
   }
 }
