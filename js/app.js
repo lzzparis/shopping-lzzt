@@ -1,3 +1,5 @@
+var $ = require('jquery');
+
 $(document).ready(function(){
 
 	$(".add-item").on("click",".add-item__btn",addItem);
