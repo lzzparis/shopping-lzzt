@@ -1,8 +1,7 @@
-
-var $ = require('jquery');
+const $ = require('jquery');
 
 function deleteItem() {
-    deletedItem = $(this).parent(".sl-item");
+    let deletedItem = $(this).parent(".sl-item");
     deletedItem.remove();
 }
 
